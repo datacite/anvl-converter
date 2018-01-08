@@ -1,0 +1,21 @@
+language: ruby
+rvm:
+- 2.4.1
+addons:
+  code_climate:
+    repo_token: "$CODECLIMATE_REPO_TOKEN"
+install:
+- travis_retry bundle install
+script:
+- bundle exec rspec
+- bundle exec codeclimate-test-reporter || true
+notifications:
+  email: false
+deploy:
+  provider: rubygems
+  api_key:
+    secure: BMX2JmLCio7KJm3coR6Jz5/ygERi7oAL4xSNhNffQMcHa6cZn06HpNjMWVtU/TFouI3AN+tAVpe9RIoLpCEYCPfXDholi1AoGIDhaxDG+PopnTsGJUchs9xpsyaOZcqdNRl55EBEozm28qVCQDmJbket2vaiguUI/Scf+fNTuslK3azz8r4slpl+4PxiaZRuoCnN0YGI3pdG41jfuoEWY2YJlgShkXiYiUdeKtEjzGUgN/ky6GYxVx53rd0AtBlblYfa3KjTR0/8j4/ej/duWiXW4XRpsEJNL9NZDdFJ2WoLG8M71K8DSn7dHFx9V2cK0J92kGZUCfIZWt4SmtAYvyPu3hw690ORJubNRSNe/uMIx4E10L1YbXQL3VPlcOR0UgYziy2HQiC93MCskNtPbax+MYDFgl0a9COVrskXnRXgDY8/3EoeoOXZGuNRIhH3PLBk32bDzdgOaRFriqX4Y47XHkllis2hh0gO6UHuzIj7TrYJpMcdTDCa3aYAu4P7yRhvMtaCvkLOywcAG/Qm+tv9mfDWWEi2ZtCfGk+G+C8K5pCVX9/mUfY4zSdsztD0qL6IJfv4Lv3YoOAHx2RNDGmsNBr0LsNGwOpe52hkD6UC1YNWzDdlcjmaPr7cv5x0FURpfJBq01SjYbfRP0aq/6tTpinaZO3E5l0byICPuOU=
+  gem: anvl-converter
+  on:
+    tags: true
+    repo: datacite/anvl-converter
