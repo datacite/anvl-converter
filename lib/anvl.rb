@@ -1,3 +1,3 @@
-require "core_extensions/hash/anvl"
-require "core_extensions/string/anvl"
+require 'anvl/core_ext/ruby/hash'
+require 'anvl/core_ext/ruby/string'
 require "anvl/version"
