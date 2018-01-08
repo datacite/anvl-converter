@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.homepage      = "https://github.com/datacite/anvl-converter"
   s.summary       = "Ruby library to parse and generate ANVL"
   s.date          = Date.today
-  s.description   = "Ruby library to parse and generate ANVL."
+  s.description   = "Ruby library to parse and generate A Name-Value Language (ANVL)."
   s.require_paths = ["lib"]
   s.version       = Anvl::VERSION
   s.extra_rdoc_files = ["README.md"]
