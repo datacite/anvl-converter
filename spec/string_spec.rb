@@ -48,5 +48,12 @@ when/created: 1888
       expect(anvl[:what]).to eq("The Yeomen of the Guard")
       expect(anvl[:"when/created"]).to eq("1888")
     end
+
+    it "datacite example" do
+      str = File.read(fixture_path + 'datacite.txt')
+      anvl = str.from_anvl
+      expect(anvl[:datacite].split("\n")[2].strip).to eq("<identifier identifierType=\"DOI\">10.5072/FK2/sbdbtest/501</identifier>")
+      expect(anvl[:_target]).to eq("http://data.sbgrid.org/dataset/501")
+    end
   end
 end
