@@ -12,6 +12,11 @@ describe String do
       expect(str.from_anvl).to eq("name"=>"Josiah\nCarberry")
     end
 
+    it "escaped newlines and empty line" do
+      str = "name: Josiah%0ACarberry%0A "
+      expect(str.from_anvl).to eq("name"=>"Josiah\nCarberry\n")
+    end
+
     it "ignore comment" do
       str = "# first draft"
       expect(str.from_anvl).to eq({})
