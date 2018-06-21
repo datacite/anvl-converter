@@ -5,7 +5,7 @@ class String
         # ignore
       elsif line.include?(":")
         k, v = line.split(":", 2)
-        sum[k.to_s.strip.anvlunesc] = v.to_s.strip.anvlunesc
+        sum[k.to_s.strip.anvlunesc] = v.to_s.strip.sub(/\A['"](.*)['"]\z/, '\\1').anvlunesc
       elsif line.strip.present? && line.start_with?(" ")
         sum[sum.keys.last] += " " + line.strip
       end

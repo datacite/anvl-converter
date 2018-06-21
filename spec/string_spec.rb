@@ -7,6 +7,16 @@ describe String do
       expect(str.from_anvl).to eq("_status"=>"public")
     end
 
+    it "single quotes" do
+      str = "_status: 'public'"
+      expect(str.from_anvl).to eq("_status"=>"public")
+    end
+
+    it "double quotes" do
+      str = "_status: \"public\""
+      expect(str.from_anvl).to eq("_status"=>"public")
+    end
+
     it "escaped newlines" do
       str = "name: Josiah%0ACarberry"
       expect(str.from_anvl).to eq("name"=>"Josiah\nCarberry")
