@@ -17,6 +17,11 @@ describe String do
       expect(str.from_anvl).to eq("_status"=>"public")
     end
 
+    it "https url" do
+      str = "_target: https://www.datacite.org"
+      expect(str.from_anvl).to eq("_target"=>"https://www.datacite.org")
+    end
+
     it "escaped newlines" do
       str = "name: Josiah%0ACarberry"
       expect(str.from_anvl).to eq("name"=>"Josiah\nCarberry")
