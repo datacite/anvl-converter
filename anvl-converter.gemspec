@@ -14,6 +14,10 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = ["README.md"]
   s.license       = 'MIT'
 
+  s.require_paths = ["lib"]
+  s.files       = `git ls-files`.split($/)
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+
   # Declary dependencies here, rather than in the Gemfile
   s.add_development_dependency 'bundler', '~> 1.0'
   s.add_development_dependency 'rspec', '~> 3.4'
@@ -21,8 +25,4 @@ Gem::Specification.new do |s|
   s.add_dependency 'activesupport', '>= 4.2.5', '< 6'
   s.add_development_dependency 'codeclimate-test-reporter', '~> 1.0', '>= 1.0.8'
   s.add_development_dependency 'simplecov'
-
-  s.require_paths = ["lib"]
-  s.files       = `git ls-files`.split($/)
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
 end
