@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'bundler', '~> 1.0'
   s.add_development_dependency 'rspec', '~> 3.4'
   s.add_development_dependency 'rake', '~> 12.0'
-  s.add_dependency 'activesupport', '>= 4.2.5', '< 6'
+  s.add_dependency 'activesupport', '>= 4.2.5', '< 8'
   s.add_development_dependency 'codeclimate-test-reporter', '~> 1.0', '>= 1.0.8'
   s.add_development_dependency 'simplecov'
 end
